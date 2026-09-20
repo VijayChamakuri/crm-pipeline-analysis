@@ -1,5 +1,9 @@
 # CRM Sales Pipeline Analysis
 
+**Synthetic data.** Real CRM exports are not public, so `generate_data.py` produces 650 opportunities shaped like a Salesforce opportunity export. Findings describe this generated dataset only, not any company.
+
+**Key outputs:** [Executive summary](output/exec_summary.md) · [Funnel chart](output/funnel.png) · [Win rate by segment](output/win_rate_by_segment.png) · [Analysis queries](queries.sql) · [Data dictionary](data/DATA_DICTIONARY.md)
+
 ## Business Question
 Where in the sales funnel are deals being lost, and which segments, lead sources, and reps convert best?
 
@@ -31,6 +35,9 @@ Where in the sales funnel are deals being lost, and which segments, lead sources
 - Build a segment-specific loss-reason playbook for Enterprise (No Budget-driven) instead of reusing the SMB objection-handling script, keeping the small-sample caveat in mind before over-indexing on the exact split.
 
 ## On the Tableau gap
+
+**Update, September 2026.** Two other portfolio projects now carry published Tableau Public workbooks built from their governed marts: [SaaS Revenue Intelligence](https://public.tableau.com/app/profile/vijay.chamakuri/viz/SaaSRevenueIntelligenceMRRRetentionBillingControls/Executiveoverview) and [Medicare Claims Utilization, Payment & Quality](https://public.tableau.com/app/profile/vijay.chamakuri/viz/MedicareClaimsUtilizationPaymentQualityAnalyticsCMSDE-SynPUF/ExecutiveOverview). This repository still has no workbook of its own, and the paragraph below records why it did not at the time.
+
 This role's posting lists Tableau as a plus, and the honest state of this repo is: no Tableau workbook. Building one needs a Tableau Public account and its desktop/web authoring tool, both outside what this environment can do (parallel to why there's no Power BI file in the `elastic-revenue-forecast` repo). What's here instead: `output/*.csv` per query, already shaped for a direct `Get Data > Text/CSV` import into Tableau Public with no transformation needed, so building the workbook on top of this is a matter of connecting Tableau to those files, not re-deriving the analysis.
 
 ## Files
